@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import { Link } from 'react-router-dom'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+class App extends Component{
+
+  render(){
+    return(
+      <div className="row">
+                <div className="col-3"></div>
+                <div className="col-6">
+                    <div className="container mt-5">
+                        <h2 className="mb-3">Login or Register</h2>
+                        <form onSubmit="">
+                        <div className="mb-3">
+                            <label className="form-label" htmlFor="name">
+                            Enter your mobile number
+                            </label>
+                            <input className="form-control" type="text" id="name" required />
+                        </div>
+
+                        <button className="btn btn-danger" type="submit">
+                            <Link to="/register"> Submit </Link>                          
+                        </button>
+                        </form>
+                            </div>
+                    </div>
+                    <div className="col-3"></div>
+            </div>
+    )
+  }
+
 }
-
 export default App;
